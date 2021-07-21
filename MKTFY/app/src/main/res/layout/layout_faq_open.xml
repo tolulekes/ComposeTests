@@ -1,0 +1,63 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+
+    <data>
+
+    </data>
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="vertical"
+        android:weightSum="100">
+
+        <ScrollView
+            android:id="@+id/faqCard"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent">
+
+            <androidx.constraintlayout.widget.ConstraintLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="parent"
+                android:background="@drawable/curved_top_layout">
+
+                <TextView
+                    android:id="@+id/faqTopic"
+                    android:textColor="@color/purple"
+                    android:text="@string/how_mktfy_works"
+                    android:textSize="24sp"
+                    android:fontFamily="@font/open_sans_bold"
+                    android:paddingHorizontal="20dp"
+                    android:paddingTop="30dp"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    app:layout_constraintTop_toTopOf="parent"
+                    app:layout_constraintStart_toStartOf="parent" />
+
+                <TextView
+                    android:id="@+id/faqWords"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:fontFamily="@font/open_sans"
+                    android:paddingHorizontal="20dp"
+                    android:paddingTop="15dp"
+                    android:text="@string/faq_words_test"
+                    android:textAlignment="textStart"
+                    app:layout_constraintTop_toBottomOf="@id/faqTopic"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintBottom_toBottomOf="parent"
+                    android:textSize="15sp"
+                    android:layout_marginBottom="22dp"
+                    android:textColor="@android:color/black" />
+
+
+            </androidx.constraintlayout.widget.ConstraintLayout>
+        </ScrollView>
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+</layout>

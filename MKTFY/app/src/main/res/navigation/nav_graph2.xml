@@ -1,0 +1,40 @@
+<?xml version="1.0" encoding="utf-8"?>
+<navigation xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/nav_graph2"
+    app:startDestination="@id/menuFragment">
+
+    <fragment
+        android:id="@+id/menuFragment"
+        android:name="com.vogproject.mktfy.ui.menu.MenuFragment"
+        android:label="fragment_menu"
+        tools:layout="@layout/fragment_menu" >
+        <action
+            android:id="@+id/action_menuFragment_to_loginActivity"
+            app:destination="@id/loginActivity" />
+        <action
+            android:id="@+id/action_menuFragment_to_FAQ"
+            app:destination="@id/FAQ" />
+        <action
+            android:id="@+id/action_menuFragment_to_changePassword"
+            app:destination="@id/changePassword" />
+    </fragment>
+    <activity
+        android:id="@+id/loginActivity"
+        android:name="com.vogproject.mktfy.ui.login.LoginActivity"
+        android:label="LoginActivity" />
+    <fragment
+        android:id="@+id/FAQ"
+        android:name="com.vogproject.mktfy.ui.faq.FAQClosed"
+        android:label="FAQ" />
+    <fragment
+        android:id="@+id/changePassword"
+        android:name="com.vogproject.mktfy.ui.passworduis.ChangePassword"
+        android:label="fragment_change_password"
+        tools:layout="@layout/fragment_change_password" >
+        <action
+            android:id="@+id/action_changePassword_to_menuFragment"
+            app:destination="@id/menuFragment" />
+    </fragment>
+</navigation>

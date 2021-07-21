@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="utf-8"?>
+<navigation xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:id="@+id/nav_graph3"
+    app:startDestination="@id/forgotPasswordFragment">
+
+    <fragment
+        android:id="@+id/forgotPasswordFragment"
+        android:name="com.vogproject.mktfy.ui.passworduis.ForgotPasswordFragment"
+        android:label="ForgotPasswordFragment" >
+        <action
+            android:id="@+id/action_forgotPasswordFragment_to_loginActivity2"
+            app:destination="@id/loginActivity2" />
+    </fragment>
+    <activity
+        android:id="@+id/loginActivity2"
+        android:name="com.vogproject.mktfy.ui.login.LoginActivity"
+        android:label="LoginActivity" />
+</navigation>

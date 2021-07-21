@@ -1,0 +1,46 @@
+<?xml version="1.0" encoding="utf-8"?>
+<navigation xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/nav_graph"
+    app:startDestination="@id/createUserFragment">
+    <fragment
+        android:id="@+id/privacyPolicy"
+        android:name="com.vogproject.mktfy.ui.privacypolicy.PrivacyPolicy"
+        android:label="fragment_privacy_policy"
+        tools:layout="@layout/fragment_privacy_policy" >
+        <action
+            android:id="@+id/action_privacyPolicy_to_createPassword2"
+            app:destination="@id/createPassword" />
+    </fragment>
+    <fragment
+        android:id="@+id/termsOfService"
+        android:name="com.vogproject.mktfy.ui.termsofservice.TermsOfService"
+        android:label="TermsOfService" >
+        <action
+            android:id="@+id/action_termsOfService_to_createPassword2"
+            app:destination="@id/createPassword" />
+    </fragment>
+    <fragment
+        android:id="@+id/createUserFragment"
+        android:name="com.vogproject.mktfy.ui.createuser.CreateUserFragment"
+        android:label="CreateUserFragment" >
+        <action
+            android:id="@+id/action_createUserFragment_to_createPassword"
+            app:destination="@id/createPassword" />
+    </fragment>
+    <fragment
+        android:id="@+id/createPassword"
+        android:name="com.vogproject.mktfy.ui.createuser.CreatePassword"
+        android:label="CreatePassword">
+        <action
+            android:id="@+id/action_createPassword_to_privacyPolicy"
+            app:destination="@id/privacyPolicy" />
+        <action
+            android:id="@+id/action_createPassword_to_termsOfService"
+            app:destination="@id/termsOfService" />
+        <action
+            android:id="@+id/action_createPassword_to_createUserFragment"
+            app:destination="@id/createUserFragment" />
+    </fragment>
+</navigation>

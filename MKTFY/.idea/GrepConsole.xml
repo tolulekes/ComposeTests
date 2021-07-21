@@ -1,0 +1,37 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="GrepConsole">
+    <option name="pinnedGrepConsolesState">
+      <PinnedGrepConsolesState>
+        <option name="map">
+          <map>
+            <entry>
+              <key>
+                <RunConfigurationRef>
+                  <option name="name" value="Build" />
+                </RunConfigurationRef>
+              </key>
+              <value>
+                <Pins>
+                  <option name="pins">
+                    <list>
+                      <Pin>
+                        <option name="consoleUUID" value="a58d62fa-c31f-446a-a82d-0606f5ae435f" />
+                        <option name="grepModel">
+                          <GrepModel>
+                            <option name="expression" value="$PROJECT_DIR$/app/build/generated/source/kapt/debug/com/vogproject/mktfy/DataBinderMapperImpl.java:12: error: cannot find symbol import com.vogproject.mktfy.databinding.FragmentChangePasswordBindingImpl;                                        ^   symbol:   class FragmentChangePasswordBindingImpl   location: package com.vogproject.mktfy.databinding/Users/tolulekes/AndroidStudioProjects/MKTFY/app/build/generated/source/kapt/debug/com/vogproject/mktfy/DataBinderMapperImpl.java:13: error: cannot find symbol import com.vogproject.mktfy.databinding.FragmentCreatePasswordBindingImpl;                                        ^   symbol:   class FragmentCreatePasswordBindingImpl   location: package com.vogproject.mktfy.databinding/Users/tolulekes/AndroidStudioProjects/MKTFY/app/build/generated/source/kapt/debug/com/vogproject/mktfy/DataBinderMapperImpl.java:16: error: cannot find symbol import com.vogproject.mktfy.databinding.FragmentResetPasswordBindingImpl;                                        ^   symbol:   class FragmentResetPasswordBindingImpl   location: package com.vogproject.mktfy.databinding/Users/tolulekes/AndroidStudioProjects/MKTFY/app/build/tmp/kapt3/stubs/debug/com/vogproject/mktfy/general/BindingAdaptersKt.java:21: error: @BindingAdapter passwordValidator(java.lang.CharSequence,android.widget.EditText) is applied to a method that has two parameters, the first must be a View type:     public static final void passwordValidator(@org.jetbrains.annotations.Nullable()" />
+                            <option name="unlessExpression" value="" />
+                          </GrepModel>
+                        </option>
+                      </Pin>
+                    </list>
+                  </option>
+                </Pins>
+              </value>
+            </entry>
+          </map>
+        </option>
+      </PinnedGrepConsolesState>
+    </option>
+  </component>
+</project>

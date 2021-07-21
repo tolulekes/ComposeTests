@@ -1,0 +1,41 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools">
+
+    <data>
+        <variable
+            name="faqtopic"
+            type="com.vogproject.mktfy.models.faq.FAQTopic" />
+        
+        <variable
+            name="clickListener"
+            type="com.vogproject.mktfy.adapters.FAQTopicClickListener" />
+
+    </data>
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:onClick="@{() -> clickListener.onClick(faqtopic)}"
+        android:layout_width="match_parent"
+        android:layout_height="74dp"
+        android:orientation="vertical">
+
+        <TextView
+            android:id="@+id/faqListItems"
+            android:layout_width="match_parent"
+            android:layout_height="70dp"
+            android:layout_margin="10dp"
+            android:fontFamily="@font/metropolis_medium"
+            android:text="@{faqtopic.setup}"
+            android:gravity="start"
+            android:padding="20dp"
+            android:textSize="16sp"
+            android:textColor="@color/purple"
+            tools:text="@tools:sample/lorem"
+            app:drawableTint="@color/purple"
+            app:drawableRightCompat="@drawable/ic_baseline_arrow_right_24"
+            app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintStart_toStartOf="parent"/>
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+</layout>

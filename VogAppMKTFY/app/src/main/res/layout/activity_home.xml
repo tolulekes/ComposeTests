@@ -1,0 +1,234 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools">
+
+    <data>
+        <variable
+            name="categories"
+            type="java.util.List&lt;com.vogproject.vogappmktfy.models.Category>" />
+
+        <variable
+            name="products"
+            type="androidx.lifecycle.LiveData&lt;java.util.List&lt;com.vogproject.vogappmktfy.models.Product>>" />
+    </data>
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:id="@+id/homeLayout"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        tools:context=".ui.home.HomeActivity">
+
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:id="@+id/categoryGroup"
+            android:background="@color/white"
+            android:elevation="5dp"
+            app:layout_constraintTop_toTopOf="parent"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
+
+            <View
+                android:id="@+id/search_background"
+                android:background="@color/purple"
+                android:layout_width="match_parent"
+                app:layout_constraintTop_toTopOf="parent"
+                android:layout_height="90dp" />
+
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="0dp"
+                android:orientation="horizontal"
+                app:layout_constraintTop_toTopOf="@id/search_background"
+                app:layout_constraintBottom_toBottomOf="@id/search_background"
+                android:layout_margin="15dp"
+                android:background="@drawable/search_background">
+
+                <ImageView
+                    android:layout_width="54dp"
+                    android:layout_height="match_parent"
+                    android:padding="15dp"
+                    android:contentDescription="@null"
+                    android:layout_gravity="center_vertical"
+                    android:src="@drawable/menu" />
+
+                <View
+                    android:layout_width="1dp"
+                    android:layout_height="21dp"
+                    android:background="@color/menu_divider"
+                    android:layout_gravity="center_vertical" />
+
+                <EditText
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:hint="@string/search_on_mktfy"
+                    android:drawableEnd="@drawable/search_menu"
+                    android:paddingHorizontal="15dp"
+                    android:inputType="text"
+                    android:background="@android:color/transparent"
+                    android:importantForAutofill="no" />
+
+            </LinearLayout>
+
+            <TextView
+                android:id="@+id/browseCategories"
+                android:layout_width="wrap_content"
+                android:layout_height="19dp"
+                android:layout_marginStart="15dp"
+                android:layout_marginTop="11dp"
+                android:fontFamily="@font/open_sans"
+                android:text="@string/browse_categories"
+                android:textAlignment="textStart"
+                android:textColor="@android:color/black"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@id/search_background" />
+
+            <TextView
+                android:id="@+id/citySelection"
+                android:layout_width="wrap_content"
+                android:layout_height="19dp"
+                android:layout_marginTop="11dp"
+                android:layout_marginEnd="15dp"
+                android:fontFamily="@font/open_sans"
+                android:text="@string/calgary"
+                android:textAlignment="textStart"
+                android:clickable="true"
+                app:drawableStartCompat="@drawable/caret_down"
+                app:drawableTint="@color/purple"
+                app:layout_constraintEnd_toEndOf="@id/search_background"
+                app:layout_constraintTop_toBottomOf="@id/search_background"
+                android:focusable="true" />
+
+            <androidx.recyclerview.widget.RecyclerView
+                android:id="@+id/categoriesRecyclerView"
+                list="@{categories}"
+                tools:listitem="@layout/layout_category"
+                android:layout_marginTop="9dp"
+                android:clipToPadding="true"
+                android:paddingHorizontal="15dp"
+                app:layout_constraintTop_toBottomOf="@id/browseCategories"
+                android:layout_width="match_parent"
+                android:layout_height="90dp" />
+
+        </androidx.constraintlayout.widget.ConstraintLayout>
+
+        <TextView
+            android:id="@+id/deals_text"
+            android:textSize="14sp"
+            android:text="@string/deals_for_you"
+            app:layout_constraintTop_toBottomOf="@id/categoryGroup"
+            app:layout_constraintStart_toStartOf="parent"
+            android:fontFamily="@font/open_sans"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="26dp"
+            android:layout_marginStart="15dp"
+            android:textColor="@android:color/black" />
+
+        <TextView
+            android:id="@+id/filteredCity"
+            android:textSize="14sp"
+            android:text="@={}"
+            app:layout_constraintTop_toBottomOf="@id/categoryGroup"
+            app:layout_constraintEnd_toEndOf="parent"
+            android:fontFamily="@font/open_sans"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="26dp"
+            android:layout_marginEnd="15dp"
+            android:textColor="@android:color/black" />
+
+        <androidx.recyclerview.widget.RecyclerView
+            android:id="@+id/productRecyclerView"
+            android:layout_marginStart="10dp"
+            list="@{products}"
+            android:layout_width="match_parent"
+            app:layoutManager="androidx.recyclerview.widget.StaggeredGridLayoutManager"
+            app:spanCount="2"
+            android:layout_marginTop="21dp"
+            android:layout_marginHorizontal="5dp"
+            android:layout_height="0dp"
+            tools:listitem="@layout/layout_product"
+            app:layout_constraintTop_toBottomOf="@id/deals_text"
+            app:layout_constraintStart_toStartOf="parent" />
+
+
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:elevation="10dp"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            goneVisibility="">
+
+            <View
+                android:layout_width="30dp"
+                android:layout_height="30dp"
+                android:layout_marginStart="260dp"
+                android:rotation="45"
+                app:layout_constraintTop_toTopOf="@id/cityFilter"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent" />
+
+            <androidx.constraintlayout.widget.ConstraintLayout
+                android:id="@+id/cityFilter"
+                android:background="@android:color/white"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintTop_toTopOf="parent"
+                android:layout_marginTop="123.15dp"
+                android:layout_marginEnd="20.5dp"
+                android:layout_width="314.5dp"
+                android:layout_height="241.35dp">
+
+
+                <EditText
+                    android:id="@+id/searchCities"
+                    android:layout_width="285dp"
+                    android:layout_height="48dp"
+                    app:layout_constraintTop_toTopOf="@id/cityFilter"
+                    app:layout_constraintStart_toStartOf="@id/cityFilter"
+                    android:paddingHorizontal="20dp"
+                    android:layout_marginTop="24.85dp"
+                    android:layout_marginStart="15dp"
+                    android:hint="@string/search_city"
+                    android:drawablePadding="7dp"
+                    android:drawableStart="@drawable/search_menu"
+                    android:background="@drawable/search_background" />
+
+                <TextView
+                    android:id="@+id/firstCity"
+                    android:layout_width="314dp"
+                    android:layout_marginTop="8dp"
+                    android:layout_height="48dp"
+                    android:text="@string/brooks"
+                    android:padding="15dp"
+                    app:layout_constraintStart_toStartOf="@id/cityFilter"
+                    app:layout_constraintTop_toBottomOf="@id/searchCities"
+                    android:textColor="@drawable/search_city_selector" />
+
+                <TextView
+                    android:id="@+id/secondCity"
+                    android:layout_width="314dp"
+                    android:layout_height="48dp"
+                    android:padding="15dp"
+                    android:text="@string/calgary"
+                    android:background="@color/recycler_grey"
+                    app:layout_constraintStart_toStartOf="@id/cityFilter"
+                    app:layout_constraintTop_toBottomOf="@id/firstCity"
+                    android:textColor="@drawable/search_city_selector" />
+
+                <TextView
+                    android:id="@+id/thirdCity"
+                    android:layout_width="314dp"
+                    android:layout_height="48dp"
+                    android:padding="15dp"
+                    android:text="@string/camrose"
+                    app:layout_constraintStart_toStartOf="@id/cityFilter"
+                    app:layout_constraintTop_toBottomOf="@id/secondCity"
+                    android:textColor="@drawable/search_city_selector" />
+
+            </androidx.constraintlayout.widget.ConstraintLayout>
+
+
+        </androidx.constraintlayout.widget.ConstraintLayout>
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+</layout>

@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools">
+
+    <data>
+        <variable
+            name="city"
+            type="com.vogproject.mktfy.models.homeactivity.Cities" />
+
+    </data>
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+
+        <TextView
+            android:id="@+id/firstCity"
+            android:layout_width="match_parent"
+            android:layout_height="48dp"
+            android:text="@{city.cityS}"
+            android:padding="15dp"
+            tools:text="@tools:sample/cities"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            android:textColor="@drawable/search_city_selector" />
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+</layout>

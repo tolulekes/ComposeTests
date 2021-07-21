@@ -1,0 +1,64 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools">
+
+    <data>
+
+    </data>
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:background="@color/home_page_purple"
+        tools:context=".ui.splash.SplashActivity">
+
+        <ImageView
+            android:id="@+id/back_cloud"
+            android:layout_width="match_parent"
+            android:layout_height="375dp"
+            android:src="@drawable/clouds_back"
+            app:layout_constraintBottom_toBottomOf="@id/logo"
+            android:layout_marginBottom="138dp"
+            android:layout_marginStart="-150dp"
+            android:layout_marginEnd="-150dp"
+            android:translationY="-440dp"
+            android:contentDescription="@null" />
+
+        <ImageView
+            android:id="@+id/mid_cloud"
+            android:layout_width="match_parent"
+            android:layout_height="375dp"
+            android:src="@drawable/clouds_mid"
+            app:layout_constraintBottom_toBottomOf="@id/logo"
+            android:layout_marginStart="-150dp"
+            android:layout_marginEnd="-150dp"
+            android:translationY="-420dp"
+            android:contentDescription="@null" />
+
+        <ImageView
+            android:id="@+id/front_cloud"
+            android:layout_width="match_parent"
+            android:layout_height="375dp"
+            android:src="@drawable/clouds_front"
+            app:layout_constraintBottom_toBottomOf="@id/logo"
+            android:layout_marginStart="-150dp"
+            android:layout_marginEnd="-150dp"
+            android:translationY="-350dp"
+            android:contentDescription="@null" />
+
+        <ImageView
+            android:id="@+id/logo"
+            android:layout_width="235dp"
+            android:layout_gravity="center_horizontal"
+            android:layout_weight="0.85"
+            android:layout_height="0dp"
+            app:layout_constraintStart_toStartOf="parent"
+            android:src="@drawable/logo"
+            app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            android:contentDescription="@string/market_for_you_logo" />
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+</layout>

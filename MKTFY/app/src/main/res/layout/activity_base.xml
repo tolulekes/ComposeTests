@@ -1,0 +1,60 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools">
+
+    <data>
+        <variable
+            name="title"
+            type="Integer" />
+    </data>
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:id="@+id/baseFrameHeader"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        android:layout_width="match_parent"
+        android:layout_height="54dp">
+
+        <ImageView
+            android:id="@+id/createbackButton"
+            android:layout_width="54dp"
+            android:layout_height="wrap_content"
+            android:src="@drawable/ic_back_arrow"
+            android:layout_marginTop="33dp"
+            app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintEnd_toStartOf="@id/createPassword"
+            app:layout_constraintStart_toStartOf="parent"
+            android:contentDescription="@string/back_button" />
+
+        <TextView
+            android:id="@+id/createPassword"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:text="@{title}"
+            tools:text="Some Title"
+            android:gravity="center"
+            android:textColor="@color/home_page_purple"
+            app:layout_constraintTop_toTopOf="parent"
+            android:layout_marginTop="33dp"
+            android:textSize="16sp"
+            android:fontFamily="@font/open_sans_semibold"
+            app:layout_constraintStart_toEndOf="@+id/createbackButton"
+            app:layout_constraintEnd_toEndOf="parent"
+            android:layout_marginEnd="128dp"
+            android:layout_marginStart="98dp" />
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+        <FrameLayout
+            android:id="@+id/contentFrame"
+            app:layout_constraintTop_toBottomOf="@id/baseFrameHeader"
+            app:layout_constraintBottom_toBottomOf="parent"
+            android:layout_width="match_parent"
+            android:layout_height="0dp"/>
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+</layout>

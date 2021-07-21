@@ -1,0 +1,22 @@
+<resources>
+    <string name="app_name">VogAppMKTFY</string>
+    <string name="market_for_you_logo">Market for you logo</string>
+    <string name="email">Email</string>
+    <string name="insert_your_email">Insert your email</string>
+    <string name="password">Password</string>
+    <string name="insert_your_password">Insert your password</string>
+    <string name="i_forgot_my_password">I forgot my password</string>
+    <string name="login">Login</string>
+    <string name="new_in_app_create_an_account">New in app? Create an account!</string>
+    <string name="search_on_mktfy">Search on MKTFY</string>
+    <string name="browse_categories">Browse Categories</string>
+    <string name="calgary">Calgary</string>
+    <string name="category">Category</string>
+    <string name="sample_price">$100</string>
+    <string name="deals_for_you">Deals for you</string>
+    <string name="search_city">Search City</string>
+    <string name="brooks">Brooks</string>
+    <string name="camrose">Camrose</string>
+    <string name="hello_fragment">Hello FRAGMENT</string>
+
+</resources>
